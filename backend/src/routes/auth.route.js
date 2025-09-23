@@ -1,18 +1,17 @@
 import express from "express";
+import { signup } from "../controllers/auth.controller.js";
 
 const router = express.Router();
 
-router.get("/signup", (req, res) => {
-    res.send("Signup endpoint")
+router.post("/signup", signup)
+
+router.post("/login", (req, res) => {
+    res.status(501).json({message: "Login endpoint not implemented yet"})
 })
 
-router.get("/login", (req, res) => {
-    res.send("Login endpoint")
-})
-
-router.get("/logout", (req, res) => {
-    res.send("Logout endpoint")
+router.post("/logout", (req, res) => {
+    res.status(501).json({message: "Logout endpoint not implemented yet"})
 })
 
 
-export default router;
+export default router
